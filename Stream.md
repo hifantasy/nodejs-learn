@@ -66,18 +66,32 @@ flowing mode -> paused mode:
 
 ### Event
 * close
+    当打开的资源(文件等)关闭后触发。
 * data
+    当读到到数据时触发。当`stream`通过调用`readable.pipe()`,`readable.resume()`转换为`flowing mode`时触发,当添加处理`data`的`callback`时一样会触发。
 * end
+    读取完成时触发。
 * error
+    发生任何意外时都可能触发。
 * readable
+    当有数据可以从流中读取时触发。也会在当流读到最后，会在`end`之间触发。
 
 ## Methods
 * readable.isPaused()
+    是否在`paused mode`下，外部一般不会直接调用此方法。
 * readable.pause()
+    此方法会引发在`flowing mode`的流停止触发`data`事件，并退出`flowing mode`。
 * readable.pipe(destination[, options])
+    导入一个或多个可写流。options可会入`end=Boolean`以确定此流读完后，可写流是否关闭，默认是`true`。
 * readable.read([size])
+    读入固定的数据。如果`size`未设置，内存中的所有数据将返回。
 * readable.resume()
+    和`readable.pasue()`对应，恢复到`flowing mode`。
 * readable.setEncoding(encoding)
+    设置编码。
 * readable.unpipe([destination])
+    解除导流，不设`destination`全部解除。
 * readable.unshift(chunk)
+    添加`chunk`数据到读取序列的头。
 * readable.wrap(stream)
+    V.10前的方法。为兼容才保留。旧式的readable stream写法。
