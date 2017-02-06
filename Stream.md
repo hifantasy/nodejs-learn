@@ -5,9 +5,13 @@
 * Writable
 * Duplex 
 * Transform
+
 ### Object Mode 
+
 Node.js只能创建`String`和`Buffer`流。想创建读取Javascript对象的流，需要自己实现，此时操作Stream就是在称为`Object mode`的模式下。
+
 ### Buffering
+
 `Writable`和`Readable`都将接收到的数据存储在内部(internal buffer)。`Writable`通过`writable._writableState.getBuffer()`接收数据，而`Readable`通过`readable._readableState.buffer`接收。
 `Writable`和`Readable`内部存储空间依赖传入的`highWaterMark`。不传入时，`hightWaterMark`设为读入流的字节总数，在`Object mode`下，是对象的总数。
 
