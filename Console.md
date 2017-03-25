@@ -1,0 +1,9 @@
+* console.assert
+* console.dir
+* console.error
+* console.info
+* console.log
+* console.time
+* console.timeEnd
+* console.trace
+* console.warn
