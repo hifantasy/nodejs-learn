@@ -95,5 +95,3 @@ flowing mode -> paused mode:
     添加`chunk`数据到读取序列的头。
 * readable.wrap(stream)
     V.10前的方法。为兼容才保留。旧式的readable stream写法。
-
-#后继
